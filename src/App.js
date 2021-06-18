@@ -25,6 +25,7 @@ const App = () => {
     },
   ];
 
+  // This function will pass the lifted expenses from the NewExpense component and pass the data to Expenses via props
   const addExpenseHandler = (expense) => {
     console.log('In App.js');
     console.log(expense);

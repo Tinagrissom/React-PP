@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import ExpensesList from "./ExpensesList";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpensesChart from './ExpensesChart';
 import Card from "../UI/Card";
 import "./Expenses.css";
 
@@ -29,7 +30,7 @@ function Expenses(props) {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-
+        <ExpensesChart expenses={filteredExpenses}/>
         <ExpensesList expenses={filteredExpenses}/>
         {/* Controlled component - value is passed on to parent component and received from PC */}
         {/* Two way binding - selectedYear is passed down as props, and onChangeFilter is passing data up from ExpenseFilter */}

@@ -1,8 +1,8 @@
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 
-import React, { useState } from 'react';
-
-import NewExpense from './components/NewExpense/NewExpense';
-import Expenses from './components/Expenses/Expenses'
+import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 
 const INITIAL_EXPENSES = [
   {
@@ -11,10 +11,12 @@ const INITIAL_EXPENSES = [
     amount: 94.12,
     date: new Date(2020, 3, 14),
   },
-  { id: "e2", 
-    title: "Windshield Repair", 
-    amount: 299.49, 
-    date: new Date(2021, 2, 12) },
+  {
+    id: "e2",
+    title: "Windshield Repair",
+    amount: 299.49,
+    date: new Date(2021, 2, 12),
+  },
   {
     id: "e3",
     title: "New Tires",
@@ -37,15 +39,21 @@ const App = () => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
-  }
+  };
 
   return (
     <div>
-        <NewExpense onAddExpense={addExpenseHandler} />
-        <Expenses items={expenses}/>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Expenses Tracker</title>
+        <link rel="canonical" href="https://elegant-cori-276892.netlify.app/" />
+        <meta name="description" content="Expenses Tracker" />
+      </Helmet>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;
 // JSX JavaScript XML - the rendered HTML inside javascript file

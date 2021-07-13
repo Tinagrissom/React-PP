@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Helmet } from 'react-helmet'
+import { Helmet } from "react-helmet";
 
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
@@ -47,7 +47,7 @@ const App = () => {
         <meta charSet="utf-8" />
         <title>Expenses Tracker</title>
         <link rel="canonical" href="https://elegant-cori-276892.netlify.app/" />
-        <meta name="description" content="Expences tracker" />
+        <meta name="description" content="Expenses Tracker" />
       </Helmet>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
